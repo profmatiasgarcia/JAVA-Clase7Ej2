@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!--        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hibernate.dialect.store_engine">innodb</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/empresa</property>-->
+        
+        <property name="hibernate.dialect">org.hibernate.dialect.MariaDB103Dialect</property>
+        <property name="hibernate.dialect.store_engine">innodb</property>
+        <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mariadb://localhost:3306/empresa</property>
+        
+        <property name="connection.username">profmatias</property>
+        <property name="connection.password">1234</property>       
+         
+        <property name="hibernate.show_sql">true</property>
+        <property name="format_sql">true</property>
+        
+        <property name="hibernate.hbm2ddl.auto">create</property> 
+        <!--        <property name="hibernate.hbm2ddl.auto">update</property>-->
+        
+        <!-- mapping de las clases -->
+        <mapping class="Modelo.Producto"/>
+        <mapping resource="Empleado.hbm.xml" />
+   
+    </session-factory>
+</hibernate-configuration>
+
+<!--/**
+ * @author Prof Matias Garcia.
+ * <p> Copyright (C) 2021 para <a href = "https://www.profmatiasgarcia.com.ar/"> www.profmatiasgarcia.com.ar </a>
+ * - con licencia GNU GPL3.
+ * <p> Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los términos de la
+ * Licencia Pública General de GNU según es publicada por la Free Software Foundation, 
+ * bien con la versión 3 de dicha Licencia o bien (según su elección) con cualquier versión posterior. 
+ * Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA, 
+ * incluso sin la garantía MERCANTIL implícita o sin garantizar la CONVENIENCIA PARA UN PROPÓSITO
+ * PARTICULAR. Véase la Licencia Pública General de GNU para más detalles.
+ * Debería haber recibido una copia de la Licencia Pública General junto con este programa. 
+ * Si no ha sido así ingrese a <a href = "http://www.gnu.org/licenses/"> GNU org </a>
+ */ -->

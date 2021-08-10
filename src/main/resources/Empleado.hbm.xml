@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class catalog="empresa" name="Modelo.Empleado" optimistic-lock="version" table="empleados">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="increment"/>
+        </id>
+        <property name="nombre" type="string">
+            <column length="30" name="nombre" not-null="true"/>
+        </property>
+        <property name="apellido" type="string">
+            <column length="30" name="apellido" not-null="true"/>
+        </property>
+        <property name="email" type="string">
+            <column length="100" name="email" not-null="true"/>
+        </property>
+        <property name="telefono" type="string">
+            <column length="15" name="telefono" not-null="true"/>
+        </property>
+                <property name="antiguedad" type="java.lang.Integer">
+            <column length="2" name="antiguedad" not-null="false"/>
+        </property>
+    </class>
+    
+    <query name="findAllEmpleados"><![CDATA[SELECT p FROM Empleado p]]></query> 
+</hibernate-mapping>
+
+<!--/**
+ * @author Prof Matias Garcia.
+ * <p> Copyright (C) 2021 para <a href = "https://www.profmatiasgarcia.com.ar/"> www.profmatiasgarcia.com.ar </a>
+ * - con licencia GNU GPL3.
+ * <p> Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los términos de la
+ * Licencia Pública General de GNU según es publicada por la Free Software Foundation, 
+ * bien con la versión 3 de dicha Licencia o bien (según su elección) con cualquier versión posterior. 
+ * Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA, 
+ * incluso sin la garantía MERCANTIL implícita o sin garantizar la CONVENIENCIA PARA UN PROPÓSITO
+ * PARTICULAR. Véase la Licencia Pública General de GNU para más detalles.
+ * Debería haber recibido una copia de la Licencia Pública General junto con este programa. 
+ * Si no ha sido así ingrese a <a href = "http://www.gnu.org/licenses/"> GNU org </a>
+ */ -->
