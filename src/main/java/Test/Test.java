@@ -17,7 +17,8 @@ import Modelo.Producto;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import javax.persistence.Query;
+//import javax.persistence.Query;
+import jakarta.persistence.Query;
 import org.hibernate.Session;
 
 public class Test {

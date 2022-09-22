@@ -56,7 +56,8 @@ public class ControladorProducto {
         try {
             Transaction trx = session.beginTransaction();
 
-            Producto productoEncontrado = session.createQuery("FROM productos where idProducto =:id", Producto.class).setParameter("id", id).getSingleResult();
+//            Producto productoEncontrado = session.createQuery("SELECT * FROM productos WHERE idProducto =:id", Producto.class).setParameter("id", id).getSingleResult();
+            Producto productoEncontrado = session.createNativeQuery("SELECT * FROM productos WHERE idProducto =:id", Producto.class).setParameter("id", id).getSingleResult();
 
             trx.commit();
             return productoEncontrado;
